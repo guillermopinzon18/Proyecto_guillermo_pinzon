@@ -1,0 +1,644 @@
+
+import requests
+
+def modulo_uno():
+
+    url = "https://saman-caribbean.vercel.app/api/cruise-ships"
+
+    response = requests.request("GET", url)
+
+    api = response.json()
+
+    name_barco = []
+    name_barco.append(api[0]["name"])
+    name_barco.append(api[1]["name"])
+    name_barco.append(api[2]["name"])
+    name_barco.append(api[3]["name"])
+
+    def primer_barco():
+
+        name = []
+        name.append(api[0]["name"])
+        print("Nombre del barco: ", name[0])
+        
+        route = []
+        route.append(api[0]["route"])
+        print("La ruta del barco es: ", route[0][0] , " - " , route[0][1] , " - " , route[0][2] , " - " , route[0][3] , " - " , route[0][4])
+        
+        departure = []
+        departure.append(api[0]["departure"])
+        departure_mala = departure[0]
+        departure_buena = departure_mala.split("T")[0]
+        print("La fecha de salida es: ", departure_buena)
+
+        cost = []
+        cost.append(api[0]["cost"])
+        print("Costo de habitaciones:")
+        print("Simple: ", cost[0]["simple"])
+        print("Premium ", cost[0]["premium"])
+        print("VIP: ", cost[0]["vip"])
+
+        class Pisos:
+            def __init__(self, pisos_):
+                self.pisos_ = pisos_
+            
+        class Piso(Pisos):
+            def __init__(self, pisos_, pasillos, habitaciones):
+                Pisos.__init__(self, pisos_)
+                self.pasillos = pasillos
+                self.habitaciones = habitaciones
+
+            def describe(self):
+                return f"{self.pisos_}: {self.pasillos} pasillos y {self.habitaciones} habitaciones"
+
+        rooms = []
+        rooms.append(api[0]["rooms"])
+        print("Cantidad de pasillos y habitaciones por piso (1 piso por tipo de habitación): ")    
+        piso_1 = Piso("Simple", rooms[0]["simple"][0], rooms[0]["simple"][1])
+        piso_2 = Piso("Premium", rooms[0]["premium"][0], rooms[0]["premium"][1])
+        piso_3 = Piso("VIP", rooms[0]["vip"][0], rooms[0]["vip"][1])
+        print(piso_1.describe())
+        print(piso_2.describe())
+        print(piso_3.describe())
+
+        capacity = []
+        capacity.append(api[0]["capacity"])
+        print("Capacidad por habitación: ")
+        print("Simple: ", capacity[0]["simple"], " personas")
+        print("Premium: ", capacity[0]["premium"], "personas")    
+        print("VIP: ", capacity[0]["vip"], " personas")
+    
+    def segundo_barco():
+
+        name = []
+        name.append(api[1]["name"])
+        print("Nombre del barco: ", name[0])
+        
+        route = []
+        route.append(api[1]["route"])
+        print("La ruta del barco es: ", route[0][0] , " - " , route[0][1] , " - " , route[0][2] , " - " , route[0][3] , " - " , route[0][4], " - ", route[0][5])
+        
+        departure = []
+        departure.append(api[1]["departure"])
+        departure_mala = departure[0]
+        departure_buena = departure_mala.split("T")[0]
+        print("La fecha de salida es: ", departure_buena)
+
+        cost = []
+        cost.append(api[1]["cost"])
+        print("Costo de habitaciones:")
+        print("Simple: ", cost[0]["simple"])
+        print("Premium ", cost[0]["premium"])
+        print("VIP: ", cost[0]["vip"])
+
+        class Pisos:
+            def __init__(self, pisos_):
+                self.pisos_ = pisos_
+            
+        class Piso(Pisos):
+            def __init__(self, pisos_, pasillos, habitaciones):
+                Pisos.__init__(self, pisos_)
+                self.pasillos = pasillos
+                self.habitaciones = habitaciones
+
+            def describe(self):
+                return f"{self.pisos_}: {self.pasillos} pasillos y {self.habitaciones} habitaciones"
+
+        rooms = []
+        rooms.append(api[1]["rooms"])
+        print("Cantidad de pasillos y habitaciones por piso (1 piso por tipo de habitación): ")    
+        piso_1 = Piso("Simple", rooms[0]["simple"][0], rooms[0]["simple"][1])
+        piso_2 = Piso("Premium", rooms[0]["premium"][0], rooms[0]["premium"][1])
+        piso_3 = Piso("VIP", rooms[0]["vip"][0], rooms[0]["vip"][1])
+        print(piso_1.describe())
+        print(piso_2.describe())
+        print(piso_3.describe())
+
+        capacity = []
+        capacity.append(api[1]["capacity"])
+        print("Capacidad por habitación: ")
+        print("Simple: ", capacity[0]["simple"], " personas")
+        print("Premium: ", capacity[0]["premium"], "personas")    
+        print("VIP: ", capacity[0]["vip"], " personas")
+
+    def tercer_barco():
+
+        name = []
+        name.append(api[2]["name"])
+        print("Nombre del barco: ", name[0])
+        
+        route = []
+        route.append(api[2]["route"])
+        print("La ruta del barco es: ", route[0][0] , " - " , route[0][1] , " - " , route[0][2] , " - " , route[0][3] , " - " , route[0][4], " - ", route[0][5])
+        
+        departure = []
+        departure.append(api[2]["departure"])
+        departure_mala = departure[0]
+        departure_buena = departure_mala.split("T")[0]
+        print("La fecha de salida es: ", departure_buena)
+
+        cost = []
+        cost.append(api[2]["cost"])
+        print("Costo de habitaciones:")
+        print("Simple: ", cost[0]["simple"])
+        print("Premium ", cost[0]["premium"])
+        print("VIP: ", cost[0]["vip"])
+
+        class Pisos:
+            def __init__(self, pisos_):
+                self.pisos_ = pisos_
+            
+        class Piso(Pisos):
+            def __init__(self, pisos_, pasillos, habitaciones):
+                Pisos.__init__(self, pisos_)
+                self.pasillos = pasillos
+                self.habitaciones = habitaciones
+
+            def describe(self):
+                return f"{self.pisos_}: {self.pasillos} pasillos y {self.habitaciones} habitaciones"
+
+        rooms = []
+        rooms.append(api[2]["rooms"])
+        print("Cantidad de pasillos y habitaciones por piso (1 piso por tipo de habitación): ")    
+        piso_1 = Piso("Simple", rooms[0]["simple"][0], rooms[0]["simple"][1])
+        piso_2 = Piso("Premium", rooms[0]["premium"][0], rooms[0]["premium"][1])
+        piso_3 = Piso("VIP", rooms[0]["vip"][0], rooms[0]["vip"][1])
+        print(piso_1.describe())
+        print(piso_2.describe())
+        print(piso_3.describe())
+
+        capacity = []
+        capacity.append(api[2]["capacity"])
+        print("Capacidad por habitación: ")
+        print("Simple: ", capacity[0]["simple"], " personas")
+        print("Premium: ", capacity[0]["premium"], "personas")    
+        print("VIP: ", capacity[0]["vip"], " personas")
+
+    def cuarto_barco():
+
+        name = []
+        name.append(api[1]["name"])
+        print("Nombre del barco: ", name[0])
+        
+        route = []
+        route.append(api[1]["route"])
+        print("La ruta del barco es: ", route[0][0] , " - " , route[0][1] , " - " , route[0][2] , " - " , route[0][3] , " - " , route[0][4], " - ", route[0][5])
+        
+        departure = []
+        departure.append(api[1]["departure"])
+        departure_mala = departure[0]
+        departure_buena = departure_mala.split("T")[0]
+        print("La fecha de salida es: ", departure_buena)
+
+        cost = []
+        cost.append(api[1]["cost"])
+        print("Costo de habitaciones:")
+        print("Simple: ", cost[0]["simple"])
+        print("Premium ", cost[0]["premium"])
+        print("VIP: ", cost[0]["vip"])
+
+        class Pisos:
+            def __init__(self, pisos_):
+                self.pisos_ = pisos_
+            
+        class Piso(Pisos):
+            def __init__(self, pisos_, pasillos, habitaciones):
+                Pisos.__init__(self, pisos_)
+                self.pasillos = pasillos
+                self.habitaciones = habitaciones
+
+            def describe(self):
+                return f"{self.pisos_}: {self.pasillos} pasillos y {self.habitaciones} habitaciones"
+
+        rooms = []
+        rooms.append(api[1]["rooms"])
+        print("Cantidad de pasillos y habitaciones por piso (1 piso por tipo de habitación): ")    
+        piso_1 = Piso("Simple", rooms[0]["simple"][0], rooms[0]["simple"][1])
+        piso_2 = Piso("Premium", rooms[0]["premium"][0], rooms[0]["premium"][1])
+        piso_3 = Piso("VIP", rooms[0]["vip"][0], rooms[0]["vip"][1])
+        print(piso_1.describe())
+        print(piso_2.describe())
+        print(piso_3.describe())
+
+        capacity = []
+        capacity.append(api[1]["capacity"])
+        print("Capacidad por habitación: ")
+        print("Simple: ", capacity[0]["simple"], " personas")
+        print("Premium: ", capacity[0]["premium"], "personas")    
+        print("VIP: ", capacity[0]["vip"], " personas")
+
+
+    pregunta = input(f"¿De que barco quiere saber la información? (escriba un número): 1. {name_barco[0]}  2. {name_barco[1]}  3. {name_barco[2]}  4. {name_barco[3]}  \n")  
+    print("")
+
+    if pregunta == "1":
+        primer_barco()
+    elif pregunta == "2":
+        segundo_barco()
+    elif pregunta == "3":
+        tercer_barco()
+    elif pregunta == "4":
+        cuarto_barco()
+
+def modulo_dos_a():
+
+    url = "https://saman-caribbean.vercel.app/api/cruise-ships"
+
+    response = requests.request("GET", url)
+
+    api = response.json()
+
+    pregunta_barco_ruta = input("¿Quiere comprar un boleto en base al barco o en base a su destino? (escriba un número):  1. En base al barco  2. En base a su destino  \n")
+    print("")
+    if pregunta_barco_ruta == "1":
+        name_barco = []
+        name_barco.append(api[0]["name"])
+        name_barco.append(api[1]["name"])
+        name_barco.append(api[2]["name"])
+        name_barco.append(api[3]["name"])
+        respuesta_barco = input(f"¿De que barco quiere comprar el boleto? (escriba un número): 1. {name_barco[0]}  2. {name_barco[1]}  3. {name_barco[2]}  4. {name_barco[3]} \n")
+        print("")
+    elif pregunta_barco_ruta == "2":
+        destinos = []
+        destinos.append(api[0]["route"])
+        destinos.append(api[1]["route"])
+        destinos.append(api[2]["route"])
+        destinos.append(api[3]["route"])
+        respuesta_destino = input(f"Cuales de las siguientes rutas prefiere:  \n1. {destinos[0][0]} - {destinos[0][1]} - {destinos[0][2]} - {destinos[0][3]} - {destinos[0][4]} \n2.  {destinos[1][0]} - {destinos[1][1]} - {destinos[1][2]} - {destinos[1][3]} - {destinos[1][4]} - {destinos[1][5]} \n3.  {destinos[2][0]} - {destinos[2][1]} - {destinos[2][2]} - {destinos[2][3]} - {destinos[2][4]} - {destinos[2][5]} \n4.  {destinos[3][0]} - {destinos[3][1]} - {destinos[3][2]} - {destinos[3][3]} - {destinos[3][4]} - {destinos[3][5]} \n")
+
+    else:
+        print("Opción no disponible")
+    print("")
+
+def modulo_dos_b():
+    
+    url = "https://saman-caribbean.vercel.app/api/cruise-ships"
+    
+    response = requests.request("GET", url)
+
+    api = response.json()
+
+    name_barco = []
+    name_barco.append(api[0]["name"])
+    name_barco.append(api[1]["name"])
+    name_barco.append(api[2]["name"])
+    name_barco.append(api[3]["name"])
+        
+    class Habitacion:
+        def __init__(self, letra_numero, capacidad, referencia, tipo_habitacion):
+            self.letra_numero = letra_numero
+            self.capacidad = capacidad
+            self.referencia = referencia
+            self.tipo_habitacion = tipo_habitacion
+
+    rooms = []
+    rooms.append(api[0]["rooms"])
+    rooms.append(api[1]["rooms"])
+    rooms.append(api[2]["rooms"])
+    rooms.append(api[3]["rooms"])
+
+    def piso_barco_1():
+        def piso_1():
+        
+            habitaciones_pasillo = int(rooms[0]["simple"][1] / rooms[0]["simple"][0])
+            
+            numero_pasillos = list(range(1, rooms[0]["simple"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+
+            print("Habitaciones disponibles en el piso 1: ")
+            for t in range(1,5):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                letra_numero = letra[0], letra[1]
+                # Me falta un pasilo para que sea N*M, asi que al imprimir imaginen que los dos cuartos son de los dos profesores jajajajaja
+                l_n = print(letra_numero[0], letra_numero[1])
+
+            capacity = []
+            capacity.append(api[0]["capacity"])
+            c =  capacity[0]["simple"]
+
+            r = "Tiene servicio a la habitación"
+
+            t_h = "simple"
+
+            habitacion_piso_1 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+
+        def piso_2():
+
+            habitaciones_pasillo = int(rooms[0]["premium"][1] / rooms[0]["premium"][0])
+            
+            numero_pasillos = list(range(1, rooms[0]["premium"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+            
+            print("Habitaciones disponibles en el piso 2: ")
+            for t in range(1,4):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                letra_numero = letra[0], letra[1], letra[2]
+                l_n = print(letra_numero[0], letra_numero[1], letra_numero[2])
+
+
+            capacity = []
+            capacity.append(api[0]["capacity"])
+            c =  capacity[0]["premium"]
+
+            r = "Posee vista al mar"
+
+            t_h = "premium"
+
+            habitacion_piso_2 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+
+        def piso_3():
+
+            habitaciones_pasillo = int(rooms[0]["vip"][1] / rooms[0]["vip"][0])
+            
+            numero_pasillos = list(range(1, rooms[0]["vip"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+
+            print("Habitaciones disponibles en el piso 3: ")
+            for t in range(1,7):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                l_n = letra[0], letra[1], letra[2], letra[3], letra[4], letra[5]
+                break
+
+            capacity = []
+            capacity.append(api[0]["capacity"])
+            c =  capacity[0]["vip"]
+
+            r = "Puede albergar fiestas privadas"
+
+            t_h = "VIP"
+
+            habitacion_piso_3 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+        piso_1()
+        piso_2()
+        piso_3()
+
+    def piso_barco_2():
+        def piso_1():
+        
+            habitaciones_pasillo = int(rooms[1]["simple"][1] / rooms[1]["simple"][0])
+
+            numero_pasillos = list(range(1, rooms[1]["simple"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+
+            print("Habitaciones disponibles en el piso 1: ")
+            for t in range(1,11):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                print(letra)
+                letra_numero = letra[0], letra[1], letra[2], letra[3], letra[4], letra[5]
+                l_n = print(letra_numero[0], letra_numero[1], letra_numero[2], letra_numero[3], letra_numero[4], letra_numero[5])
+
+            capacity = []
+            capacity.append(api[1]["capacity"])
+            c =  capacity[0]["simple"]
+
+            r = "Tiene servicio a la habitación"
+
+            t_h = "simple"
+
+            habitacion_piso_1 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+
+        def piso_2():
+
+            habitaciones_pasillo = int(rooms[1]["premium"][1] / rooms[1]["premium"][0])
+            
+            numero_pasillos = list(range(1, rooms[1]["premium"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+            
+            print("Habitaciones disponibles en el piso 2: ")
+            for t in range(1,9):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                letra_numero = letra[0], letra[1], letra[2], letra[3]
+                l_n = print(letra_numero[0], letra_numero[1], letra_numero[2], letra_numero[3])
+
+
+            capacity = []
+            capacity.append(api[1]["capacity"])
+            c =  capacity[0]["premium"]
+
+            r = "Posee vista al mar"
+
+            t_h = "premium"
+
+            habitacion_piso_2 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+
+        def piso_3():
+
+            habitaciones_pasillo = int(rooms[1]["vip"][1] / rooms[1]["vip"][0])
+            
+            numero_pasillos = list(range(1, rooms[1]["vip"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+
+            print("Habitaciones disponibles en el piso 3: ")
+            for t in range(1,3):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                l_n = letra[0], letra[1], letra[2], letra[3]
+                break
+
+            capacity = []
+            capacity.append(api[1]["capacity"])
+            c =  capacity[0]["vip"]
+
+            r = "Puede albergar fiestas privadas"
+
+            t_h = "VIP"
+
+            habitacion_piso_3 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+        piso_1()
+        piso_2()
+        piso_3()
+
+    def piso_barco_3():
+        def piso_1():
+        
+            habitaciones_pasillo = int(rooms[2]["simple"][1] / rooms[2]["simple"][0])
+            
+            numero_pasillos = list(range(1, rooms[2]["simple"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+
+            print("Habitaciones disponibles en el piso 1: ")
+            for t in range(1,9):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                letra_numero = letra[0], letra[1]
+                l_n = print(letra_numero[0], letra_numero[1])
+
+            capacity = []
+            capacity.append(api[2]["capacity"])
+            c =  capacity[0]["simple"]
+
+            r = "Tiene servicio a la habitación"
+
+            t_h = "simple"
+
+            habitacion_piso_1 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+
+        def piso_2():
+
+            habitaciones_pasillo = int(rooms[2]["premium"][1] / rooms[2]["premium"][0])
+            
+            numero_pasillos = list(range(1, rooms[2]["premium"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+            
+            print("Habitaciones disponibles en el piso 2: ")
+            for t in range(1,4):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                letra_numero = letra[0], letra[1], letra[2]
+                l_n = print(letra_numero[0], letra_numero[1], letra_numero[2])
+
+
+            capacity = []
+            capacity.append(api[2]["capacity"])
+            c =  capacity[0]["premium"]
+
+            r = "Posee vista al mar"
+
+            t_h = "premium"
+
+            habitacion_piso_2 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+
+        def piso_3():
+
+            habitaciones_pasillo = int(rooms[2]["vip"][1] / rooms[2]["vip"][0])
+            
+            numero_pasillos = list(range(1, rooms[2]["vip"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+
+            print("Habitaciones disponibles en el piso 3: ")
+            for t in range(1,7):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                l_n = letra[0], letra[1], letra[2], letra[3], letra[4], letra[5]
+                break
+
+            capacity = []
+            capacity.append(api[2]["capacity"])
+            c =  capacity[0]["vip"]
+
+            r = "Puede albergar fiestas privadas"
+
+            t_h = "VIP"
+
+            habitacion_piso_3 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+        piso_1()
+        piso_2()
+        piso_3()
+
+    def piso_barco_4():
+        def piso_1():
+        
+            habitaciones_pasillo = int(rooms[3]["simple"][1] / rooms[3]["simple"][0])
+            
+            numero_pasillos = list(range(1, rooms[3]["simple"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+
+            print("Habitaciones disponibles en el piso 1: ")
+            for t in range(1,5):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                letra_numero = letra[0], letra[1]
+                l_n = print(letra_numero[0], letra_numero[1])
+
+            capacity = []
+            capacity.append(api[3]["capacity"])
+            c =  capacity[0]["simple"]
+
+            r = "Tiene servicio a la habitación"
+
+            t_h = "simple"
+
+            habitacion_piso_1 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+
+        def piso_2():
+
+            habitaciones_pasillo = int(rooms[3]["premium"][1] / rooms[3]["premium"][0])
+            
+            numero_pasillos = list(range(1, rooms[3]["premium"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+            
+            print("Habitaciones disponibles en el piso 2: ")
+            for t in range(1,4):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                letra_numero = letra[0], letra[1], letra[2]
+                l_n = print(letra_numero[0], letra_numero[1], letra_numero[2])
+
+
+            capacity = []
+            capacity.append(api[3]["capacity"])
+            c =  capacity[0]["premium"]
+
+            r = "Posee vista al mar"
+
+            t_h = "premium"
+
+            habitacion_piso_2 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+
+        def piso_3():
+
+            habitaciones_pasillo = int(rooms[0]["vip"][1] / rooms[0]["vip"][0])
+            
+            numero_pasillos = list(range(1, rooms[0]["vip"][0] + 1))
+            x = dict(zip(numero_pasillos, 'ABCDEFGHI'))
+
+            print("Habitaciones disponibles en el piso 3: ")
+            for t in range(1,7):
+                letra = list(enumerate(x[t]*habitaciones_pasillo, 1))
+                l_n = letra[0], letra[1], letra[2], letra[3], letra[4], letra[5]
+                break
+
+            capacity = []
+            capacity.append(api[0]["capacity"])
+            c =  capacity[0]["vip"]
+
+            r = "Puede albergar fiestas privadas"
+
+            t_h = "VIP"
+
+            habitacion_piso_3 = Habitacion(print(l_n), print(f"La capacidad es: {c} personas"), print(r), print(f"Habitación {t_h}"))
+            print("")
+        piso_1()
+        piso_2()
+        piso_3()
+   
+    pregunta_barco_disponible = input(f"¿Que barco quiere buscar? (escriba un número):  1. {name_barco[0]}  2. {name_barco[1]}  3. {name_barco[2]}  4. {name_barco[3]}  \n")
+    print("")
+
+    if pregunta_barco_disponible == "1":
+        piso_barco_1()
+    elif pregunta_barco_disponible == "2":
+        piso_barco_2()
+    elif pregunta_barco_disponible == "3":
+        piso_barco_3()
+    elif pregunta_barco_disponible == "4":
+        piso_barco_4()
+    else:
+        print("Esa opción no estadisponible")
+
+def modulo_tres():
+    print("")
+    # No vale profe me rendi, es que lo empece hace tres dias y no sabia que era tan largo, y aja se me vino el tiempo encima y necesito un 18 para pasar y me quedan 5 horas y a cada rato se me va el internet, si me puede ayudar un poco para que el promedio no quede tan bajo se lo agradeceria mucho, muchas gracias me encanto el curso solo que le tenia que poner un poco mas a las tareas y a todo lo demas, el proximo trimestre si le saco un 20 seguro
+
+def main():
+
+    pregunta = input("Que desea (escriba un número): 1. Información  2. Ver habitaciones disponibles y sus caracteristicas  3. Comprar una habitación  4. Venta de tours \n")
+    print("")
+    if pregunta == "1":
+        modulo_uno()
+    elif pregunta == "2":
+        modulo_dos_b()
+    elif pregunta == "3":
+        modulo_dos_a()
+    elif pregunta == "4":
+        modulo_tres()
+    else:
+        "Esa opción no existe"
+main()
+
+
